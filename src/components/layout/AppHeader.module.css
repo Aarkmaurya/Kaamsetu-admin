@@ -1,0 +1,101 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  height: var(--header-height);
+  padding: 0 var(--space-5);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.menuButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+}
+
+.menuButton:hover {
+  background: var(--color-surface-muted);
+}
+
+.mobileBrand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.brandMark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: var(--font-size-xs);
+}
+
+.brandName {
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.userChip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.userAvatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+}
+
+.userName {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+/* On desktop, the sidebar already shows the brand and menu toggle is unnecessary. */
+@media (min-width: 1024px) {
+  .menuButton {
+    display: none;
+  }
+  .mobileBrand {
+    display: none;
+  }
+}
+
+/* Keep the header from ever forcing horizontal scroll on very small screens. */
+@media (max-width: 380px) {
+  .userName {
+    display: none;
+  }
+  }
+  
