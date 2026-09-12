@@ -1,0 +1,65 @@
+.grid {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: 1fr;
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+
+.welcomeArea,
+.jobOverviewArea,
+.activityArea,
+.insightsArea {
+  min-width: 0;
+}
+
+@media (min-width: 640px) {
+  .statsRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Below this, everything is a single stacked column — no horizontal scroll,
+   no overlap, order follows natural reading order (welcome -> stats ->
+   overview -> activity -> insights). */
+@media (min-width: 1024px) {
+  .statsRow {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* True Bento asymmetry: a wide welcome+stats column on the left, a tall
+     insights card on the right spanning two rows, then a wide job-overview
+     card paired with a narrower activity feed underneath. */
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      "welcome welcome welcome welcome welcome welcome welcome welcome insights insights insights insights"
+      "stats   stats   stats   stats   stats   stats   stats   stats   insights insights insights insights"
+      "overview overview overview overview overview overview overview overview activity activity activity activity";
+  }
+
+  .welcomeArea {
+    grid-area: welcome;
+  }
+
+  .statsRow {
+    grid-area: stats;
+  }
+
+  .jobOverviewArea {
+    grid-area: overview;
+  }
+
+  .activityArea {
+    grid-area: activity;
+  }
+
+  .insightsArea {
+    grid-area: insights;
+  }
+  }
+    
