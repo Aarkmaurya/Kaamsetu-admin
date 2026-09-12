@@ -1,0 +1,64 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.root[data-open="true"] {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: rgba(16, 24, 40, 0.45);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.root[data-open="true"] .backdrop {
+  opacity: 1;
+}
+
+.drawer {
+  position: relative;
+  height: 100%;
+  width: min(84vw, 300px);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+  transform: translateX(-100%);
+  transition: transform var(--transition-base);
+}
+
+.root[data-open="true"] .drawer {
+  transform: translateX(0);
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+}
+
+/* Only ever shown below the desktop breakpoint — see DashboardLayout.module.css */
+@media (min-width: 1024px) {
+  .root {
+    display: none;
+  }
+}

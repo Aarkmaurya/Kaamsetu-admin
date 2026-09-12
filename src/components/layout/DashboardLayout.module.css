@@ -1,0 +1,46 @@
+.shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+/* Hidden below desktop width — MobileNavigation's drawer takes over instead. */
+.desktopSidebar {
+  display: none;
+}
+
+.content {
+  flex: 1;
+  min-width: 0; /* prevents flex children from forcing horizontal overflow */
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  padding: var(--space-5);
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .desktopSidebar {
+    display: block;
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+
+  .main {
+    padding: var(--space-8);
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .main {
+    padding: var(--space-6);
+  }
+}
