@@ -4,10 +4,14 @@ import { DashboardLayout } from "../../components/layout/DashboardLayout";
 import { LoginPage } from "../../pages/Login/LoginPage";
 import { DashboardPage } from "../../pages/Dashboard/DashboardPage";
 import { PlaceholderPage } from "../../pages/Placeholder/PlaceholderPage";
+import { TechniciansPage } from "../../pages/Technicians/TechniciansPage";
+import { JobsPage } from "../../pages/Jobs/JobsPage";
+import { ServicesPage } from "../../pages/Services/ServicesPage";
+import { AreasPage } from "../../pages/Areas/AreasPage";
 
 export function AppRouter() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
 
@@ -17,16 +21,10 @@ export function AppRouter() {
           <Route element={<DashboardLayout />}>
             <Route index element={<Navigate to="/dashboard" replace />} />
             <Route path="/dashboard" element={<DashboardPage />} />
-            <Route
-              path="/technicians"
-              element={<PlaceholderPage title="Technicians" phase="4B" />}
-            />
-            <Route path="/jobs" element={<PlaceholderPage title="Jobs" phase="4B" />} />
-            <Route
-              path="/services"
-              element={<PlaceholderPage title="Services" phase="4B" />}
-            />
-            <Route path="/areas" element={<PlaceholderPage title="Areas" phase="4B" />} />
+            <Route path="/technicians" element={<TechniciansPage />} />
+            <Route path="/jobs" element={<JobsPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/areas" element={<AreasPage />} />
             <Route
               path="/complaints"
               element={<PlaceholderPage title="Complaints" phase="4C" />}
@@ -38,5 +36,5 @@ export function AppRouter() {
       </Routes>
     </BrowserRouter>
   );
-          }
+}
 
