@@ -57,5 +57,4 @@ export function useDashboardData(): UseDashboardDataResult {
     error,
     refetch: () => setReloadToken((token) => token + 1),
   };
-         }
-        
+      }
