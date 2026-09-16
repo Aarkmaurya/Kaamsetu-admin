@@ -1,0 +1,50 @@
+import type { AdminService } from "../../types/service";
+
+export const serviceMockData: AdminService[] = [
+  { id: "svc_electrician", name: "Electrician", category: "Home Repair", status: "ACTIVE", createdDate: "2026-01-05" },
+  { id: "svc_plumber", name: "Plumber", category: "Home Repair", status: "ACTIVE", createdDate: "2026-01-05" },
+  { id: "svc_carpenter", name: "Carpenter", category: "Home Repair", status: "ACTIVE", createdDate: "2026-01-05" },
+  { id: "svc_painter", name: "Painter", category: "Home Repair", status: "ACTIVE", createdDate: "2026-01-06" },
+  { id: "svc_ac_repair", name: "AC Repair", category: "Appliance Repair", status: "ACTIVE", createdDate: "2026-01-06" },
+  {
+    id: "svc_fridge_repair",
+    name: "Refrigerator Repair",
+    category: "Appliance Repair",
+    status: "ACTIVE",
+    createdDate: "2026-01-06",
+  },
+  {
+    id: "svc_washing_machine_repair",
+    name: "Washing Machine Repair",
+    category: "Appliance Repair",
+    status: "ACTIVE",
+    createdDate: "2026-01-06",
+  },
+  { id: "svc_tv_repair", name: "TV Repair", category: "Appliance Repair", status: "DISABLED", createdDate: "2026-01-07" },
+  { id: "svc_mobile_repair", name: "Mobile Repair", category: "Technology", status: "ACTIVE", createdDate: "2026-01-08" },
+  { id: "svc_computer_repair", name: "Computer Repair", category: "Technology", status: "ACTIVE", createdDate: "2026-01-08" },
+  {
+    id: "svc_wifi_technician",
+    name: "Wi-Fi Technician",
+    category: "Technology",
+    status: "ACTIVE",
+    createdDate: "2026-01-08",
+  },
+  {
+    id: "svc_cctv_technician",
+    name: "CCTV Technician",
+    category: "Technology",
+    status: "ACTIVE",
+    createdDate: "2026-01-09",
+  },
+  { id: "svc_cleaner", name: "Cleaner", category: "Cleaning", status: "ACTIVE", createdDate: "2026-01-09" },
+  { id: "svc_gardener", name: "Gardener", category: "Other", status: "ACTIVE", createdDate: "2026-01-10" },
+  { id: "svc_locksmith", name: "Locksmith", category: "Other", status: "ACTIVE", createdDate: "2026-01-10" },
+  {
+    id: "svc_bike_mechanic",
+    name: "Bike Mechanic",
+    category: "Vehicle",
+    status: "DISABLED",
+    createdDate: "2026-01-11",
+  },
+];
